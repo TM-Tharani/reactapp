@@ -9,15 +9,22 @@ import Home from './pages/home.jsx'
 import About from './pages/about.jsx'
 import Contact from './pages/contact.jsx'
 
+import './index.css';
+import videoBg from './assets/bgvideo.mp4'; 
+
 function App() {
   return (
     <Router>
-      <div>
-        <Header title="@WANDERLY" />
-        <Navbar />
 
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src={videoBg} type="video/mp4" />
+      </video>
+
+      <div>
+
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home title="Home" />} />
+          <Route path="/" element={<Home title="@WANDERLY" />} />
           <Route path="/about" element={<About title="About Us" />} />
           <Route path="/contact" element={<Contact title="Contact Us" />} />
         </Routes>
